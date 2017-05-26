@@ -1,0 +1,12 @@
+{
+  "name": "better-img",
+  "description": "A simple web component",
+  "main": "index.html",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "web-component-tester": "^6.0.0-prerelease.5",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.7"
+  }
+}

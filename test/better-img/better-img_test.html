@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>better-img test</title>
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../bower_components/web-component-tester/browser.js"></script>
+    <script src="../../src/better-img/better-img.js"></script>
+  </head>
+  <body>
+
+    <test-fixture id="BasicTestFixture">
+      <template>
+        <better-img url="http://placehold.it/400x400"></better-img>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="TestFixtureWithWidthHeight">
+      <template>
+        <better-img url="http://placekitten.com/400/400" width="400" height="400"></better-img>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="FallbackTestFixture">
+      <template>
+        <better-img
+          url="http://placeitten.com/400/400"
+          fallback="http://placehold.it/400x400"></better-img>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('better-img', function() {
+
+        let element = fixture('BasicTestFixture');
+        let element2 = fixture('TestFixtureWithWidthHeight');
+
+        test('renders image', () => {
+          assert.isOk(element.shadowRoot.querySelector('img'));
+        });
+
+        test('uses url attribute', () => {
+          let img = element.shadowRoot.querySelector('img');
+          assert.equal(img.src, "http://placehold.it/400x400");
+        });
+
+        test('sets default width', () => {
+          let img = element.shadowRoot.querySelector('img');
+          assert.equal(img.width, 480);
+        });
+
+        test('sets default height', () => {
+          let img = element.shadowRoot.querySelector('img');
+          assert.equal(img.height, 640);
+        });
+
+        test('sets passed in width', () => {
+          let img = element2.shadowRoot.querySelector('img');
+          assert.equal(img.width, 400);
+        });
+
+        test('sets passed in height', () => {
+          let img = element2.shadowRoot.querySelector('img');
+          assert.equal(img.height, 400);
+        });
+
+        test('displays fallback image', () => {
+          let element3 = fixture('FallbackTestFixture');
+          let img = element3.shadowRoot.querySelector('img');
+          assert.equal(img.src, "http://placehold.it/400x400");
+        });
+
+      });
+    </script>
+  </body>
+</html>
