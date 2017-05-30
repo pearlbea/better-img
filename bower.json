@@ -1,13 +1,16 @@
 {
   "name": "better-img",
-  "description": "A simple web component",
+  "description": "A simple image component that take a fallback url and the name of a logging function.",
   "main": "index.html",
-  "authors": "Pearl Latteier & Abraham Williams",
+  "authors": [
+    "Pearl Latteier",
+    "Abraham Williams"
+  ],
   "dependencies": {
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.7"
-  }
+  },
   "devDependencies": {
-    "web-component-tester": "^6.0.0-prerelease.5",
+    "web-component-tester": "^6.0.0-prerelease.5"
   },
   "license": "MIT",
   "ignore": [
