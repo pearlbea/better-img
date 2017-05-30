@@ -2,11 +2,15 @@
   "name": "better-img",
   "description": "A simple web component",
   "main": "index.html",
+  "authors": "Pearl Latteier & Abraham Williams",
   "dependencies": {
-
-  },
-  "devDependencies": {
-    "web-component-tester": "^6.0.0-prerelease.5",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.7"
   }
+  "devDependencies": {
+    "web-component-tester": "^6.0.0-prerelease.5",
+  },
+  "license": "MIT",
+  "ignore": [
+    "bower_components"
+  ]
 }
