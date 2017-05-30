@@ -9,6 +9,11 @@
     </style>
     <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="/src/better-img/better-img.js"></script>
+    <script>
+      function logMe() {
+        console.log('me');
+      }
+    </script>
   </head>
   <body>
 
@@ -17,13 +22,15 @@
     <better-img
       url="https://placeimg.com/480/640/animals"
       fallback="http://placehold.it/480x640"
-      alt="an adorable animal">
+      alt="an adorable animal"
+      >
     </better-img>
 
     <better-img
       url="https://oopsie"
       fallback="http://placehold.it/480x640"
-      alt="another description">
+      alt="another description"
+      log="logMe">
     </better-img>
 
   </body>

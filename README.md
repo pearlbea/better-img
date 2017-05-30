@@ -19,25 +19,16 @@ A simple vanilla component that adds a fallback url and logging function to an i
 <better-img height="400" width="400" url="fail" fallback="https://placeimg.com/400/400/animals" alt="Some alt text">...</better-img>
 ```
 
-## Installation
-
-bower install
-
 ## Usage
 
 | property | type | default | description |
 | -------- | ---- | ------- | ----------- |
-| url (required) | string | null | This will become the image's "src" attribute. |
-| fallback (optional) | string | null | If the url provided returns an error, the fallback url will be assigned to the "src" attribute. |
-| width (optional) | number | 480 | Image width |
-| height (optional) | number | 640 | Image height |
-| alt (optional) | string | "" | Image alt text |
-
-## Contributing
-
-## Credits
-
-TODO: Write credits
+| url (required) | string | null | An image url. This will become the image's "src" attribute. |
+| fallback | string | null | An image url. If the url provided returns an error, the fallback url will be assigned to the "src" attribute. |
+| width | number | 480 | Image width |
+| height | number | 640 | Image height |
+| alt | string | "" | Image alt text |
+| log | string | null | If you provide the name of a function, it will be called if the url returns an error and receive the error object as a parameter.|
 
 ## License
 

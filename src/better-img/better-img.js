@@ -73,7 +73,7 @@ class BetterImg extends HTMLElement {
 
     log(err) {
       if(this.logUrl){
-
+        window[this.logUrl](err);
       }
     }
 

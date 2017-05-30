@@ -9,9 +9,14 @@
     <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../bower_components/web-component-tester/browser.js"></script>
     <script src="../../src/better-img/better-img.js"></script>
+    <script>
+        function logMe(err) {
+          document.querySelector('#test').innerText('me');
+        }
+    </script>
   </head>
   <body>
-
+    <div id="test"></div>
     <test-fixture id="BasicTestFixture">
       <template>
         <better-img url="http://placehold.it/400x400"></better-img>
@@ -34,7 +39,8 @@
         <better-img
           url="http://placeitten.com/400/400"
           fallback="http://placehold.it/400x400"
-          ></better-img>
+          log="logMe">
+        </better-img>
       </template>
     </test-fixture>
 
@@ -86,6 +92,12 @@
           }, 200)
         });
 
+        test('calls logging function', () => {
+          setTimeout(function() {
+            var text = document.querySelector('#test').innerText;
+            assert.equal(text, 'me');
+          }, 100)
+        });
       });
     </script>
   </body>
