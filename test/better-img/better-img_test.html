@@ -20,7 +20,12 @@
 
     <test-fixture id="TestFixtureWithWidthHeight">
       <template>
-        <better-img url="http://placekitten.com/400/400" width="400" height="400"></better-img>
+        <better-img
+          url="http://placekitten.com/400/400"
+          width="400"
+          height="400"
+          alt="a description">
+        </better-img>
       </template>
     </test-fixture>
 
@@ -68,14 +73,17 @@
           assert.equal(img.height, 400);
         });
 
+        test('sets alt text', () => {
+          let img = element2.shadowRoot.querySelector('img');
+          assert.equal(img.alt, "a description");
+        });
+
         test('displays fallback image', () => {
           let element3 = fixture('FallbackTestFixture');
           let img = element3.shadowRoot.querySelector('img');
-          assert.equal(img.src, "http://placehold.it/400x400");
-        });
-
-        test('logs error', () => {
-
+          setTimeout(function() {
+            assert.equal(img.src, "http://placehold.it/400x400");
+          }, 200)
         });
 
       });

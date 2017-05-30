@@ -8,20 +8,15 @@
     <script src="/src/better-img/better-img.js"></script>
   </head>
   <body>
-    <script>
-      var loggy = function logFunction(err) {
-        console.log(err);
-      }
-    </script>
     <better-img
       url="http://placehold.it/480x640"
-      fallback="http://placehold.it/222x222">
+      fallback="http://placehold.it/222x222"
+      alt="a description">
     </better-img>
     <better-img
       url="http://placeold.it/480x640"
       fallback="http://placehold.it/333x333"
-      log=loggy
-      }>
+      alt="another description">
     </better-img>
   </body>
 </html>

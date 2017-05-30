@@ -47,12 +47,18 @@ class BetterImg extends HTMLElement {
       return this.getAttribute('log');
     }
 
+    get altText() {
+      return this.getAttribute('alt');
+    }
+
     get template() {
       return `
         <img
           width=${this.width}
           height=${this.height}
-          src=${this.url} />
+          src="${this.url}"
+          alt="${this.altText}"
+        />
       `;
     }
 
