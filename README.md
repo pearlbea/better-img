@@ -19,6 +19,14 @@ A simple vanilla component that adds a fallback url and logging function to an i
 <better-img height="400" width="400" url="fail" fallback="https://placeimg.com/400/400/animals" alt="Some alt text">...</better-img>
 ```
 
+## Installing
+
+Clone the repository, cd into the project directory, and run `bundle install`.
+
+## Running the tests
+
+From the project directory, run `wct`.
+
 ## Usage
 
 | property | type | default | description |
