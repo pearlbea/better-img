@@ -28,7 +28,8 @@
       <template>
         <better-img
           url="http://placeitten.com/400/400"
-          fallback="http://placehold.it/400x400"></better-img>
+          fallback="http://placehold.it/400x400"
+          ></better-img>
       </template>
     </test-fixture>
 
@@ -71,6 +72,10 @@
           let element3 = fixture('FallbackTestFixture');
           let img = element3.shadowRoot.querySelector('img');
           assert.equal(img.src, "http://placehold.it/400x400");
+        });
+
+        test('logs error', () => {
+
         });
 
       });

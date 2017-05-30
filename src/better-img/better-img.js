@@ -14,7 +14,13 @@ class BetterImg extends HTMLElement {
     initShadowDom() {
       let shadowRoot = this.attachShadow({ mode: 'open' });
       shadowRoot.innerHTML = this.template;
-      shadowRoot.querySelector('img').onerror = this.onImgError();
+      this.addErrorListener();
+    }
+
+    addErrorListener() {
+      this.shadowRoot.querySelector('img').onerror = (err) => {
+        this.onImgError(err);
+      }
     }
 
     get url() {
@@ -37,6 +43,10 @@ class BetterImg extends HTMLElement {
       return this.getAttribute('fallback');
     }
 
+    get logUrl() {
+      return this.getAttribute('log');
+    }
+
     get template() {
       return `
         <img
@@ -46,18 +56,24 @@ class BetterImg extends HTMLElement {
       `;
     }
 
-    onImgError() {
+    onImgError(err) {
+      this.log(err);
       if(this.fallback && this.usingFallback) {
         this.setAttribute('url', this.fallback);
-        this.setSrc();
+        this.setSrc(this.fallback);
+        this.usingFallback = false;
       }
-      this.usingFallback = false;
     }
 
-    setSrc() {
-      this.shadowRoot.querySelector('img').src = this.fallback;
+    log(err) {
+      if(this.logUrl){
+
+      }
     }
 
+    setSrc(url) {
+      this.shadowRoot.querySelector('img').src = url;
+    }
   }
 
   customElements.define('better-img', BetterImg);
