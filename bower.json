@@ -3,8 +3,8 @@
   "description": "A simple image component that take a fallback url and the name of a logging function.",
   "main": "index.html",
   "authors": [
-    "Pearl Latteier",
-    "Abraham Williams"
+    "Pearl Latteier <https://github.com/pearlbea>",
+    "Abraham Williams <https://github.com/abraham>"
   ],
   "dependencies": {
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.7"
