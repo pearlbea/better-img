@@ -48,7 +48,7 @@ class BetterImg extends HTMLElement {
     }
 
     get altText() {
-      return this.getAttribute('alt');
+      return this.getAttribute('alt') || "";
     }
 
     get template() {

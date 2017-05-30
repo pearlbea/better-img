@@ -4,19 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
     <title>Better Image</title>
+    <style>
+      body { text-align: center; }
+    </style>
     <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="/src/better-img/better-img.js"></script>
   </head>
   <body>
+
+    <h1>better-img demo</h1>
+
     <better-img
-      url="http://placehold.it/480x640"
-      fallback="http://placehold.it/222x222"
-      alt="a description">
+      url="https://placeimg.com/480/640/animals"
+      fallback="http://placehold.it/480x640"
+      alt="an adorable animal">
     </better-img>
+
     <better-img
-      url="http://placeold.it/480x640"
-      fallback="http://placehold.it/333x333"
+      url="https://oopsie"
+      fallback="http://placehold.it/480x640"
       alt="another description">
     </better-img>
+
   </body>
 </html>
