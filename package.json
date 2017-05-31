@@ -1,0 +1,29 @@
+{
+  "name": "better-img",
+  "version": "1.0.0",
+  "description": "A vanilla web component that adds a fallback url and logging function to an image.",
+  "main": "src/better-img/better-img.js",
+  "dependencies": {},
+  "devDependencies": {
+    "web-component-tester": "^6.0.0"
+  },
+  "scripts": {
+    "setup": "npm install && bower install",
+    "test": "wct"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pearlbea/better-img.git"
+  },
+  "keywords": [
+    "web-component",
+    "image",
+    "web-component-tester"
+  ],
+  "author": "pearlbea@gmail.com, 4braham@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pearlbea/better-img/issues"
+  },
+  "homepage": "https://github.com/pearlbea/better-img#readme"
+}

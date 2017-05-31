@@ -6,9 +6,7 @@
     "Pearl Latteier <https://github.com/pearlbea>",
     "Abraham Williams <https://github.com/abraham>"
   ],
-  "dependencies": {
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.7"
-  },
+  "dependencies": {},
   "devDependencies": {
     "web-component-tester": "^6.0.0-prerelease.5"
   },

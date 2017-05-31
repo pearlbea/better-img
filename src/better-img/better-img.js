@@ -2,9 +2,15 @@ class BetterImg extends HTMLElement {
 
     constructor() {
       super();
-      this.defaultWidth = 480;
-      this.defaultHeight = 640;
       this.usingFallback = true;
+    }
+
+    get defaultWidth() {
+      return 480;
+    }
+
+    get defaultHeight() {
+      return 640;
     }
 
     connectedCallback() {

@@ -1,6 +1,6 @@
 # better-img
 
-A simple vanilla component that adds a fallback url and logging function to an image.
+A vanilla component that adds a fallback url and logging function to an image.
 
 <!---
 ```
@@ -21,11 +21,11 @@ A simple vanilla component that adds a fallback url and logging function to an i
 
 ## Installing
 
-Clone the repository, cd into the project directory, and run `bundle install`.
+Clone the repository. There are no required dependencies, although if you want use this component in browsers that do not support v1 Custom Elements and Shadow DOM, use a polyfill like [webcomponentsjs](https://github.com/webcomponents/webcomponentsjs).
 
 ## Running the tests
 
-From the project directory, run `wct`.
+To setup the testing tools, enter `npm run setup`. Then to run the tests, enter `wct` at the command line. See the [web-component-tester](https://github.com/Polymer/web-component-tester) docs for more info.
 
 ## Usage
 
