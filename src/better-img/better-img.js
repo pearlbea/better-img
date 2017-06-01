@@ -24,9 +24,7 @@ class BetterImg extends HTMLElement {
     }
 
     addErrorListener() {
-      this.shadowRoot.querySelector('img').onerror = (err) => {
-        this.onImgError(err);
-      }
+      this.shadowRoot.querySelector('img').onerror = this.onImgError.bind(this);
     }
 
     get url() {
@@ -69,7 +67,7 @@ class BetterImg extends HTMLElement {
     }
 
     onImgError(err) {
-      this.log(err);
+      this.logError(err);
       if(this.fallback && this.usingFallback) {
         this.setAttribute('url', this.fallback);
         this.setSrc(this.fallback);
@@ -77,7 +75,7 @@ class BetterImg extends HTMLElement {
       }
     }
 
-    log(err) {
+    logError(err) {
       if(this.logUrl){
         window[this.logUrl](err);
       }
