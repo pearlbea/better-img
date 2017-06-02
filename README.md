@@ -20,7 +20,7 @@ A vanilla component that adds a fallback url and logging function to an image.
 ```html
 <better-img
   url="https://placeimg.com/480/640/animals"
-  fallback="http://placehold.it/480x640"
+  fallback="https://lorempixel.com/480/640"
   alt="an adorable animal">
 </better-img>
 ```
