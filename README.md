@@ -7,7 +7,7 @@ A vanilla component that adds a fallback url and logging function to an image.
 <custom-element-demo>
   <template>
     <style> body { text-align: center; } </style>
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../custom-elements/custom-elements.js"></script>
     <script src="src/better-img/better-img.js"></script>
     <next-code-block></next-code-block>
   </template>
@@ -21,11 +21,12 @@ A vanilla component that adds a fallback url and logging function to an image.
 
 ## Installing
 
-Clone the repository. There are no required dependencies, although if you want use this component in browsers that do not support v1 Custom Elements and Shadow DOM, use a polyfill like [webcomponentsjs](https://github.com/webcomponents/webcomponentsjs).
+Clone the repository. There are no required dependencies, although if you want to use this component in browsers that do not support Custom Elements v1, use the [polyfill](https://github.com/webcomponents/custom-elements).(Note that the [webcomponents-lite](https://github.com/webcomponents/webcomponentsjs) polyfill appears to cause an image error in Firefox that results in the fallback image always being displayed.)
 
 ## Running the tests
 
-To setup the testing tools, enter `npm run setup`. Then to run the tests, enter `wct` at the command line. See the [web-component-tester](https://github.com/Polymer/web-component-tester) docs for more info.
+To setup the testing tools:```npm run setup``` Then to run the tests: ```wct```.
+See the [web-component-tester](https://github.com/Polymer/web-component-tester) docs for more info.
 
 ## Usage
 

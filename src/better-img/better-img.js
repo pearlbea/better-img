@@ -14,17 +14,16 @@ class BetterImg extends HTMLElement {
     }
 
     connectedCallback() {
-      this.initShadowDom();
+      this.init();
     }
 
-    initShadowDom() {
-      let shadowRoot = this.attachShadow({ mode: 'open' });
-      shadowRoot.innerHTML = this.template;
+    init() {
+      this.innerHTML = this.template;
       this.addErrorListener();
     }
 
     addErrorListener() {
-      this.shadowRoot.querySelector('img').onerror = this.onImgError.bind(this);
+      this.querySelector('img').onerror = this.onImgError.bind(this);
     }
 
     get url() {
@@ -82,7 +81,7 @@ class BetterImg extends HTMLElement {
     }
 
     setSrc(url) {
-      this.shadowRoot.querySelector('img').src = url;
+      this.querySelector('img').src = url;
     }
   }
 
