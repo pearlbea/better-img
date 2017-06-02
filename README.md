@@ -1,3 +1,5 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/pearlbea/better-img)
+
 # better-img
 
 A vanilla component that adds a fallback url and logging function to an image.
