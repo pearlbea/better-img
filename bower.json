@@ -8,7 +8,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "web-component-tester": "^6.0.0-prerelease.5"
+    "web-component-tester": "^6.0.0"
   },
   "license": "MIT",
   "ignore": [
