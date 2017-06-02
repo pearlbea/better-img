@@ -16,7 +16,11 @@ A vanilla component that adds a fallback url and logging function to an image.
 -->
 
 ```html
-<better-img height="400" width="400" url="fail" fallback="https://placeimg.com/400/400/animals" alt="Some alt text">...</better-img>
+<better-img
+  url="https://placeimg.com/480/640/animals"
+  fallback="http://placehold.it/480x640"
+  alt="an adorable animal">
+</better-img>
 ```
 
 ## Installing
