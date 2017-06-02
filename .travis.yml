@@ -11,5 +11,8 @@ language: node_js
 node_js:
   - "node"
   - "6"
+before_script:
+  - npm install bower
+  - bower install
 script:
   - xvfb-run npm test
