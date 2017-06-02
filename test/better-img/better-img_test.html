@@ -6,7 +6,7 @@
 
     <title>better-img test</title>
 
-    <script src="../../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../../custom-elements/custom-elements.js"></script>
     <script src="../../../web-component-tester/browser.js"></script>
     <script src="../../src/better-img/better-img.js"></script>
     <script>
@@ -51,42 +51,42 @@
         let element2 = fixture('TestFixtureWithWidthHeight');
 
         test('renders image', () => {
-          assert.isOk(element.shadowRoot.querySelector('img'));
+          assert.isOk(element.querySelector('img'));
         });
 
         test('uses url attribute', () => {
-          let img = element.shadowRoot.querySelector('img');
+          let img = element.querySelector('img');
           assert.equal(img.src, "http://placehold.it/400x400");
         });
 
         test('sets default width', () => {
-          let img = element.shadowRoot.querySelector('img');
+          let img = element.querySelector('img');
           assert.equal(img.width, 480);
         });
 
         test('sets default height', () => {
-          let img = element.shadowRoot.querySelector('img');
+          let img = element.querySelector('img');
           assert.equal(img.height, 640);
         });
 
         test('sets passed in width', () => {
-          let img = element2.shadowRoot.querySelector('img');
+          let img = element2.querySelector('img');
           assert.equal(img.width, 400);
         });
 
         test('sets passed in height', () => {
-          let img = element2.shadowRoot.querySelector('img');
+          let img = element2.querySelector('img');
           assert.equal(img.height, 400);
         });
 
         test('sets alt text', () => {
-          let img = element2.shadowRoot.querySelector('img');
+          let img = element2.querySelector('img');
           assert.equal(img.alt, "a description");
         });
 
         test('displays fallback image', () => {
           let element3 = fixture('FallbackTestFixture');
-          let img = element3.shadowRoot.querySelector('img');
+          let img = element3.querySelector('img');
           setTimeout(function() {
             assert.equal(img.src, "http://placehold.it/400x400");
           }, 200)
