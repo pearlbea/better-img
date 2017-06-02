@@ -3,69 +3,67 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-
     <title>better-img test</title>
 
-    <script src="../../../custom-elements/custom-elements.js"></script>
-    <script src="../../../web-component-tester/browser.js"></script>
+    <script src="../../bower_components/custom-elements/custom-elements.min.js"></script>
+    <script src="../../node_modules/web-component-tester/browser.js"></script>
     <script src="../../src/better-img/better-img.js"></script>
-    <script>
-        function logMe(err) {
-          document.querySelector('#test').innerText('me');
-        }
-    </script>
   </head>
   <body>
+
     <div id="test"></div>
-    <test-fixture id="BasicTestFixture">
-      <template>
-        <better-img url="http://placehold.it/400x400"></better-img>
-      </template>
+
+    <test-fixture>
+      <better-img id="element1" url="https://placeimg.com/480/640/animals"></better-img>
     </test-fixture>
 
-    <test-fixture id="TestFixtureWithWidthHeight">
-      <template>
-        <better-img
-          url="http://placekitten.com/400/400"
-          width="400"
-          height="400"
-          alt="a description">
-        </better-img>
-      </template>
+    <test-fixture>
+      <better-img
+        id="element2"
+        url="https://placeimg.com/480/640/animals"
+        width="400"
+        height="400"
+        alt="a description">
+      </better-img>
     </test-fixture>
 
-    <test-fixture id="FallbackTestFixture">
-      <template>
-        <better-img
-          url="http://placeitten.com/400/400"
-          fallback="http://placehold.it/400x400"
-          log="logMe">
-        </better-img>
-      </template>
+    <test-fixture>
+      <better-img
+        id="element3"
+        url="https://placimg/480/640/animals"
+        fallback="https://placeimg.com/480/640/animals"
+        log="logMe">
+      </better-img>
     </test-fixture>
+
 
     <script>
       suite('better-img', function() {
 
-        let element = fixture('BasicTestFixture');
-        let element2 = fixture('TestFixtureWithWidthHeight');
+        function logMe(err) {
+          document.querySelector('#test').innerText('me');
+        }
+
+        let element1 = document.querySelector('#element1');
+        let element2 = document.querySelector('#element2');
+        let element3 = document.querySelector('#element3');
 
         test('renders image', () => {
-          assert.isOk(element.querySelector('img'));
+          assert.isOk(element1.querySelector('img'));
         });
 
         test('uses url attribute', () => {
-          let img = element.querySelector('img');
-          assert.equal(img.src, "http://placehold.it/400x400");
+          let img = element1.querySelector('img');
+          assert.equal(img.src, "https://placeimg.com/480/640/animals");
         });
 
         test('sets default width', () => {
-          let img = element.querySelector('img');
+          let img = element1.querySelector('img');
           assert.equal(img.width, 480);
         });
 
         test('sets default height', () => {
-          let img = element.querySelector('img');
+          let img = element1.querySelector('img');
           assert.equal(img.height, 640);
         });
 
@@ -85,10 +83,9 @@
         });
 
         test('displays fallback image', () => {
-          let element3 = fixture('FallbackTestFixture');
           let img = element3.querySelector('img');
           setTimeout(function() {
-            assert.equal(img.src, "http://placehold.it/400x400");
+            assert.equal(img.src, "https://placeimg.com/480/640/animals");
           }, 200)
         });
 
@@ -96,8 +93,9 @@
           setTimeout(function() {
             var text = document.querySelector('#test').innerText;
             assert.equal(text, 'me');
-          }, 100)
+          }, 200)
         });
+
       });
     </script>
   </body>
