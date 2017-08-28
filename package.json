@@ -5,11 +5,12 @@
   "main": "src/better-img/better-img.js",
   "dependencies": {},
   "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^1.0.0",
     "web-component-tester": "^6.0.0"
   },
   "scripts": {
-    "setup": "npm install && bower install",
-    "test": "wct"
+    "setup": "npm install",
+    "test": "wct --npm"
   },
   "repository": {
     "type": "git",

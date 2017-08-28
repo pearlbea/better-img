@@ -7,12 +7,9 @@
     "Abraham Williams <https://github.com/abraham>"
   ],
   "dependencies": {},
-  "devDependencies": {
-    "web-component-tester": "^6.0.0"
-  },
+  "devDependencies": {},
   "license": "MIT",
   "ignore": [
-    "bower_components",
     "node_modules"
   ]
 }
