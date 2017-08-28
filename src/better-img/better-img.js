@@ -2,7 +2,7 @@ class BetterImg extends HTMLElement {
 
     constructor() {
       super();
-      this.usingFallback = true;
+      this.usingFallback = false;
     }
 
     get defaultWidth() {
@@ -20,6 +20,7 @@ class BetterImg extends HTMLElement {
     init() {
       this.innerHTML = this.template;
       this.addErrorListener();
+      this.setSrc(this.url);
     }
 
     addErrorListener() {
@@ -46,7 +47,7 @@ class BetterImg extends HTMLElement {
       return this.getAttribute('fallback');
     }
 
-    get logUrl() {
+    get logCallback() {
       return this.getAttribute('log');
     }
 
@@ -59,7 +60,6 @@ class BetterImg extends HTMLElement {
         <img
           width=${this.width}
           height=${this.height}
-          src="${this.url}"
           alt="${this.altText}"
         />
       `;
@@ -67,16 +67,20 @@ class BetterImg extends HTMLElement {
 
     onImgError(err) {
       this.logError(err);
-      if(this.fallback && this.usingFallback) {
+      this.useFallback();
+    }
+
+    useFallback() {
+      if(this.fallback && !this.usingFallback) {
         this.setAttribute('url', this.fallback);
         this.setSrc(this.fallback);
-        this.usingFallback = false;
+        this.usingFallback = true;
       }
     }
 
     logError(err) {
-      if(this.logUrl){
-        window[this.logUrl](err);
+      if(this.logCallback){
+        window[this.logCallback](err);
       }
     }
 

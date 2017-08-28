@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
     <title>better-img test</title>
 
-    <script src="../../bower_components/custom-elements/custom-elements.min.js"></script>
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-sd-ce.js"></script>
     <script src="../../node_modules/web-component-tester/browser.js"></script>
     <script src="../../src/better-img/better-img.js"></script>
     <script>
       function logMe(err) {
-        document.querySelector('#test').innerText('me');
+        document.querySelector('#test').innerText = 'me';
       }
     </script>
   </head>
@@ -19,13 +19,16 @@
     <div id="test"></div>
 
     <test-fixture>
-      <better-img id="element1" url="https://placeimg.com/480/640/animals"></better-img>
+      <better-img
+        id="element1"
+        url="https://placeimg.com/481/641/animals">
+      </better-img>
     </test-fixture>
 
     <test-fixture>
       <better-img
         id="element2"
-        url="https://placeimg.com/480/640/animals"
+        url="https://placeimg.com/482/642/animals"
         width="400"
         height="400"
         alt="a description">
@@ -35,9 +38,17 @@
     <test-fixture>
       <better-img
         id="element3"
-        url="https://placimg/480/640/animals"
-        fallback="https://placeimg.com/480/640/animals"
+        url="https://example.com/483/643/food"
+        fallback="https://placeimg.com/483/643/animals"
         log="logMe">
+      </better-img>
+    </test-fixture>
+
+    <test-fixture>
+      <better-img
+        id="element4"
+        url="https://placeimg.com/484/644/animals"
+        fallback="https://placeimg.com/484/644/food">
       </better-img>
     </test-fixture>
 
@@ -48,6 +59,7 @@
         let element1 = document.querySelector('#element1');
         let element2 = document.querySelector('#element2');
         let element3 = document.querySelector('#element3');
+        let element4 = document.querySelector('#element4');
 
         test('renders image', () => {
           assert.isOk(element1.querySelector('img'));
@@ -55,7 +67,7 @@
 
         test('uses url attribute', () => {
           let img = element1.querySelector('img');
-          assert.equal(img.src, "https://placeimg.com/480/640/animals");
+          assert.equal(img.src, "https://placeimg.com/481/641/animals");
         });
 
         test('sets default width', () => {
@@ -83,10 +95,17 @@
           assert.equal(img.alt, "a description");
         });
 
-        test('displays fallback image', () => {
+        test('displays primary image', () => {
           let img = element3.querySelector('img');
           setTimeout(function() {
-            assert.equal(img.src, "https://placeimg.com/480/640/animals");
+            assert.equal(img.src, "https://placeimg.com/483/643/animals");
+          }, 200)
+        });
+
+        test('displays fallback image', () => {
+          let img = element4.querySelector('img');
+          setTimeout(function() {
+            assert.equal(img.src, "https://placeimg.com/484/644/animals");
           }, 200)
         });
 
