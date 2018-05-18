@@ -10,5 +10,12 @@
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "wct-browser-legacy": "^1.0.0"
   },
-  "version": "1.2.4"
+  "version": "1.2.5",
+  "keywords": [
+    "web-component",
+    "image",
+    "web-component-tester"
+  ],
+  "author": "pearlbea@gmail.com",
+  "license": "MIT"
 }
