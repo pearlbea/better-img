@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>better-img-polymer test</title>
+
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/wct-browser-legacy/browser.js"></script>
+
+    <script type="module" src="../better-img-polymer.js"></script>
+    <script>
+    function logMe(err) {
+  document.querySelector("#test").innerText = "me";
+}
+</script>
+  </head>
+  <body>
+
+    <test-fixture id="BasicTestFixture">
+      <template>
+        <better-img-polymer url="https://placeimg.com/481/641/animals"></better-img-polymer>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="ChangedPropertyTestFixture">
+      <template>
+        <better-img-polymer
+          url="https://placeimg.com/400/640/animals"
+          width=250
+          height=250
+          alt="an adorable animal image"
+        ></better-img-polymer>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="ErrorTestFixture">
+      <template>
+        <better-img-polymer
+          url="https://placeig.com/400/640/animals"
+          fallback="https://placeimg.com/400/640/food"
+          width=250
+          height=250
+          alt="an image"
+          log=""
+        ></better-img-polymer>
+      </template>
+    </test-fixture>
+
+    <script type="module">
+suite("better-img-polymer", () => {
+  suite("it displays default properties", () => {
+    const element = fixture("BasicTestFixture");
+    const elementShadowRoot = element.shadowRoot;
+    const image = elementShadowRoot.querySelector("img");
+
+    test("it renders the image", () => {
+      assert.isOk(image);
+      assert.equal(
+        image.getAttribute("src"),
+        "https://placeimg.com/481/641/animals"
+      );
+    });
+
+    test("it sets the default width", () => {
+      assert.equal(image.getAttribute("width"), 480);
+    });
+
+    test("it sets the default height", () => {
+      assert.equal(image.getAttribute("height"), 640);
+    });
+
+    test("it sets the default alt", () => {
+      assert.equal(image.getAttribute("alt"), "");
+    });
+  });
+
+  suite("it displays set properties", () => {
+    const element = fixture("ChangedPropertyTestFixture");
+    const elementShadowRoot = element.shadowRoot;
+    const image = elementShadowRoot.querySelector("img");
+
+    test("it displays set with", () => {
+      assert.equal(image.getAttribute("width"), 250);
+    });
+
+    test("it displays set height", () => {
+      assert.equal(image.getAttribute("height"), 250);
+    });
+
+    test("it display the set alt", () => {
+      assert.equal(image.getAttribute("alt"), "an adorable animal image");
+    });
+  });
+
+  suite("it handles image errors", () => {
+    const element = fixture("ErrorTestFixture");
+    const elementShadowRoot = element.shadowRoot;
+    const image = elementShadowRoot.querySelector("img");
+
+    test(
+      "it displays the fallback image",
+      () => {
+        setTimeout(() => {
+          assert.equal(
+            image.getAttribute("src"),
+            "https://placeimg.com/400/640/food"
+          );
+        });
+      },
+      200
+    );
+
+    test("it calls logging function", () => {
+      setTimeout(function() {
+        const text = document.querySelector("#test").innerText;
+        assert.equal(text, "me");
+      }, 200);
+    });
+  });
+});
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "better-img",
+  "description": "A simple image component that take a fallback url and the name of a logging function.",
+  "main": "index.html",
+  "authors": [
+    "Pearl Latteier <https://github.com/pearlbea>",
+    "Abraham Williams <https://github.com/abraham>"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "license": "MIT",
+  "ignore": [
+    "node_modules"
+  ]
+}
