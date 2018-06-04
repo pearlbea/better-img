@@ -13,9 +13,12 @@ declare global {
   }
   namespace JSXElements {}
 
+  interface HTMLElement {
+    componentOnReady?: () => Promise<this | null>;
+  }
+
   interface HTMLStencilElement extends HTMLElement {
     componentOnReady(): Promise<this>;
-    componentOnReady(done: (ele?: this) => void): void;
 
     forceUpdate(): void;
   }
@@ -31,9 +34,8 @@ declare global {
       'alt': string;
       'fallback': string;
       'height': number;
-      'log': number;
+      'log': string;
       'url': string;
-      'usingFallback': boolean;
       'width': number;
     }
   }
@@ -60,10 +62,8 @@ declare global {
       'alt'?: string;
       'fallback'?: string;
       'height'?: number;
-      'log'?: number;
-      'onImageError'?: (event: CustomEvent) => void;
+      'log'?: string;
       'url'?: string;
-      'usingFallback'?: boolean;
       'width'?: number;
     }
   }
