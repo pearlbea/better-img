@@ -26,7 +26,7 @@ $ npm run dev
 ## Running the tests
 
 ```
-$ npm run dev
+$ npm test
 ```
 
 See the Stencil testing [docs](https://stenciljs.com/docs/unit-testing/) and [Jest](https://facebook.github.io/jest/en/) for more info.
