@@ -1,30 +1,59 @@
-import { Component, Event, EventEmitter, Listen, Prop } from "@stencil/core";
+import { Component, Element, Prop, State } from "@stencil/core";
 
 @Component({
   tag: "better-img-stencil",
-  styleUrl: "better-img-stencil.css",
-  shadow: true
+  styleUrl: "better-img-stencil.css"
 })
-export class MyComponent {
-  @Event() imageError: EventEmitter;
+export class BetterImgStencil {
+  @Element() el: HTMLElement;
 
-  @Prop() alt: string = "";
+  @Prop() alt: string;
   @Prop() fallback: string;
   @Prop() height: number = 640;
-  @Prop() log: number;
+  @Prop() log: string;
   @Prop() url: string;
-  @Prop() usingFallback: boolean = false;
   @Prop() width: number = 480;
 
+  @State() usingFallback: boolean = false;
+
   render() {
-    return <img width={this.width} height={this.height} alt={this.alt} />;
+    return (
+      <img
+        onError={this.handleImgError.bind(this)}
+        width={this.width}
+        height={this.height}
+        alt={this.alt}
+      />
+    );
   }
-  componentDidLoad() {}
 
-  @Listen("error")
-  handleError(e) {
-    console.log(e);
+  componentDidLoad() {
+    this.setSrc(this.url);
   }
 
-  imageErrorHandler() {}
+  get image() {
+    return this.el.querySelector("img");
+  }
+
+  handleImgError(error) {
+    this.logError(error);
+    this.useFallback();
+  }
+
+  logError(error) {
+    if (this.log) {
+      window[this.log](error);
+    }
+  }
+
+  setSrc(url) {
+    this.image.setAttribute("src", url);
+  }
+
+  useFallback() {
+    if (this.fallback && !this.usingFallback) {
+      this.setSrc(this.fallback);
+      this.usingFallback = true;
+    }
+  }
 }

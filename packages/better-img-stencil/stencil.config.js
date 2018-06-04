@@ -1,17 +1,17 @@
 exports.config = {
-  namespace: 'mycomponent',
-  outputTargets:[
-    { 
-      type: 'dist' 
+  namespace: "better-img-stencil",
+  outputTargets: [
+    {
+      type: "dist"
     },
-    { 
-      type: 'www',
+    {
+      type: "www",
       serviceWorker: false
     }
   ]
 };
 
 exports.devServer = {
-  root: 'www',
-  watchGlob: '**/**'
-}
+  root: "www",
+  watchGlob: "**/**"
+};
