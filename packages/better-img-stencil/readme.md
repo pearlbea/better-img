@@ -1,4 +1,4 @@
-# # \<better-img-stencil\>
+# \<better-img-stencil\>
 
 A simple component that adds a fallback url and logging function to an image. Made with [Stencil Component Starter](https://github.com/ionic-team/stencil-component-starter).
 
