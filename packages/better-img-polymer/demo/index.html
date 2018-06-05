@@ -3,11 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-
     <title>better-img-polymer demo</title>
-
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-
     <script type="module">
     import "@polymer/iron-demo-helpers/demo-pages-shared-styles";
 import "@polymer/iron-demo-helpers/demo-snippet";
@@ -26,10 +23,11 @@ import "@polymer/iron-demo-helpers/demo-snippet";
       <demo-snippet>
         <template>
           <better-img-polymer
-            url="https://placeimg.com/480/640/animals"
-            fallback="https://lorempixel.com/480/640"
-            alt="an adorable animal">
-          </better-img-polymer>
+            url="https://placeimg.com/400/640/animals"
+            width=400
+            height=640
+            alt="an adorable animal image"
+          ></better-img-polymer>
         </template>
       </demo-snippet>
     </div>
