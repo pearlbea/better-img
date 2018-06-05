@@ -1,8 +1,7 @@
 {
   "name": "@pearlbea/better-img-nutmeg",
-  "version": "0.1.0",
-  "description":
-    "A simple web component that adds a fallback url and error logging function to an image",
+  "version": "1.2.8",
+  "description": "A simple web component that adds a fallback url and error logging function to an image",
   "main": "dist/better-img-nutmeg.js",
   "module": "dist/better-img-nutmeg.js",
   "unpkg": "dist/better-img-nutmeg.min.js",
@@ -13,7 +12,10 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "keywords": ["better-img-nutmeg", "nutmeg"],
+  "keywords": [
+    "better-img-nutmeg",
+    "nutmeg"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "npx nutmeg build .",
