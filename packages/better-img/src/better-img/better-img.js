@@ -1,92 +1,102 @@
+const template = document.createElement("template");
+template.innerHTML = `
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <img />
+`;
+
 class BetterImg extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadowDOM();
+  }
 
-    constructor() {
-      super();
-      this.usingFallback = false;
-    }
+  connectedCallback() {
+    this.usingFallback = false;
+    this.img.onerror = this.onImgError.bind(this);
+    this.upgradeProperties();
+    this.setProperties();
+  }
 
-    get defaultWidth() {
-      return 480;
-    }
+  attachShadowDOM() {
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
 
-    get defaultHeight() {
-      return 640;
-    }
-
-    connectedCallback() {
-      this.init();
-    }
-
-    init() {
-      this.innerHTML = this.template;
-      this.addErrorListener();
-      this.setSrc(this.url);
-    }
-
-    addErrorListener() {
-      this.querySelector('img').onerror = this.onImgError.bind(this);
-    }
-
-    get url() {
-      return this.getAttribute('url');
-    }
-
-    set url(value) {
-      return this.url = value;
-    }
-
-    get width() {
-      return this.getAttribute('width') || this.defaultWidth;
-    }
-
-    get height() {
-      return this.getAttribute('height') || this.defaultHeight;
-    }
-
-    get fallback() {
-      return this.getAttribute('fallback');
-    }
-
-    get logCallback() {
-      return this.getAttribute('log');
-    }
-
-    get altText() {
-      return this.getAttribute('alt') || "";
-    }
-
-    get template() {
-      return `
-        <img
-          width=${this.width}
-          height=${this.height}
-          alt="${this.altText}"
-        />
-      `;
-    }
-
-    onImgError(err) {
-      this.logError(err);
-      this.useFallback();
-    }
-
-    useFallback() {
-      if(this.fallback && !this.usingFallback) {
-        this.setAttribute('url', this.fallback);
-        this.setSrc(this.fallback);
-        this.usingFallback = true;
+  upgradeProperties() {
+    this.propKeys.forEach(prop => {
+      if (this.hasOwnProperty(prop)) {
+        let value = this[prop];
+        delete this[prop];
+        this[prop] = value;
       }
-    }
+    });
+  }
 
-    logError(err) {
-      if(this.logCallback){
-        window[this.logCallback](err);
-      }
-    }
+  setProperties() {
+    this.setSrc(this.url);
+    this.img.width = this.width;
+    this.img.height = this.height;
+    this.img.alt = this.altText;
+  }
 
-    setSrc(url) {
-      this.querySelector('img').src = url;
+  get propKeys() {
+    return ["url", "fallback", "width", "height", "altText", "logCallback"];
+  }
+
+  get img() {
+    return this.shadowRoot.querySelector("img");
+  }
+
+  get url() {
+    return this.getAttribute("url");
+  }
+
+  get width() {
+    return this.getAttribute("width") || 480;
+  }
+
+  get height() {
+    return this.getAttribute("height") || 640;
+  }
+
+  get altText() {
+    return this.getAttribute("alt") || "";
+  }
+
+  get fallback() {
+    return this.getAttribute("fallback");
+  }
+
+  get logCallback() {
+    return this.getAttribute("log");
+  }
+
+  onImgError(err) {
+    this.logError(err);
+    this.useFallback();
+  }
+
+  useFallback() {
+    if (this.fallback && !this.usingFallback) {
+      this.setAttribute("url", this.fallback);
+      this.setSrc(this.fallback);
+      this.usingFallback = true;
     }
   }
 
-  customElements.define('better-img', BetterImg);
+  logError(err) {
+    if (this.logCallback) {
+      window[this.logCallback](err);
+    }
+  }
+
+  setSrc(url) {
+    this.img.src = url;
+  }
+}
+
+customElements.define("better-img", BetterImg);

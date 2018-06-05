@@ -54,69 +54,67 @@
 
 
     <script>
-      suite('better-img', function() {
+    suite("better-img", function() {
+  let element1 = document.querySelector("#element1");
+  let element2 = document.querySelector("#element2");
+  let element3 = document.querySelector("#element3");
+  let element4 = document.querySelector("#element4");
 
-        let element1 = document.querySelector('#element1');
-        let element2 = document.querySelector('#element2');
-        let element3 = document.querySelector('#element3');
-        let element4 = document.querySelector('#element4');
+  test("renders image", () => {
+    assert.isOk(element1.shadowRoot.querySelector("img"));
+  });
 
-        test('renders image', () => {
-          assert.isOk(element1.querySelector('img'));
-        });
+  test("uses url attribute", () => {
+    let img = element1.shadowRoot.querySelector("img");
+    assert.equal(img.src, "https://placeimg.com/481/641/animals");
+  });
 
-        test('uses url attribute', () => {
-          let img = element1.querySelector('img');
-          assert.equal(img.src, "https://placeimg.com/481/641/animals");
-        });
+  test("sets default width", () => {
+    let img = element1.shadowRoot.querySelector("img");
+    assert.equal(img.width, 480);
+  });
 
-        test('sets default width', () => {
-          let img = element1.querySelector('img');
-          assert.equal(img.width, 480);
-        });
+  test("sets default height", () => {
+    let img = element1.shadowRoot.querySelector("img");
+    assert.equal(img.height, 640);
+  });
 
-        test('sets default height', () => {
-          let img = element1.querySelector('img');
-          assert.equal(img.height, 640);
-        });
+  test("sets passed in width", () => {
+    let img = element2.shadowRoot.querySelector("img");
+    assert.equal(img.width, 400);
+  });
 
-        test('sets passed in width', () => {
-          let img = element2.querySelector('img');
-          assert.equal(img.width, 400);
-        });
+  test("sets passed in height", () => {
+    let img = element2.shadowRoot.querySelector("img");
+    assert.equal(img.height, 400);
+  });
 
-        test('sets passed in height', () => {
-          let img = element2.querySelector('img');
-          assert.equal(img.height, 400);
-        });
+  test("sets alt text", () => {
+    let img = element2.shadowRoot.querySelector("img");
+    assert.equal(img.alt, "a description");
+  });
 
-        test('sets alt text', () => {
-          let img = element2.querySelector('img');
-          assert.equal(img.alt, "a description");
-        });
+  test("displays primary image", () => {
+    let img = element3.shadowRoot.querySelector("img");
+    setTimeout(function() {
+      assert.equal(img.src, "https://placeimg.com/483/643/animals");
+    }, 200);
+  });
 
-        test('displays primary image', () => {
-          let img = element3.querySelector('img');
-          setTimeout(function() {
-            assert.equal(img.src, "https://placeimg.com/483/643/animals");
-          }, 200)
-        });
+  test("displays fallback image", () => {
+    let img = element4.shadowRoot.querySelector("img");
+    setTimeout(function() {
+      assert.equal(img.src, "https://placeimg.com/484/644/animals");
+    }, 200);
+  });
 
-        test('displays fallback image', () => {
-          let img = element4.querySelector('img');
-          setTimeout(function() {
-            assert.equal(img.src, "https://placeimg.com/484/644/animals");
-          }, 200)
-        });
-
-        test('calls logging function', () => {
-          setTimeout(function() {
-            var text = document.querySelector('#test').innerText;
-            assert.equal(text, 'me');
-          }, 200)
-        });
-
-      });
-    </script>
+  test("calls logging function", () => {
+    setTimeout(function() {
+      var text = document.querySelector("#test").innerText;
+      assert.equal(text, "me");
+    }, 200);
+  });
+});
+</script>
   </body>
 </html>

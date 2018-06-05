@@ -4,11 +4,12 @@
   "description": "A vanilla web component that adds a fallback url and logging function to an image.",
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "^1.0.0",
-    "web-component-tester": "^6.0.0"
+    "wct-browser-legacy": "^1.0.1",
+    "web-component-tester": "^6.6.0-pre.5"
   },
   "scripts": {
     "setup": "npm install",
-    "test": "wct --npm"
+    "test": "npx wct --npm"
   },
   "keywords": [
     "web-component",
