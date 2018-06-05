@@ -1,14 +1,16 @@
-const template = document.createElement("template");
-template.innerHTML = `
-  <style>
-    :host {
-      display: block;
-    }
-  </style>
-  <img />
-`;
-
 class BetterImg extends HTMLElement {
+  static get template() {
+    const template = document.createElement("template");
+    template.innerHTML = `
+      <style>
+        :host {
+          display: block;
+        }
+      </style>
+      <img />
+    `;
+    return template;
+  }
   constructor() {
     super();
     this.attachShadowDOM();
@@ -23,7 +25,7 @@ class BetterImg extends HTMLElement {
 
   attachShadowDOM() {
     this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.shadowRoot.appendChild(BetterImg.template.content.cloneNode(true));
   }
 
   upgradeProperties() {
