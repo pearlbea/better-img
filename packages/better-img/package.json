@@ -1,8 +1,7 @@
 {
   "name": "@pearlbea/better-img",
-  "version": "1.2.9",
-  "description":
-    "A vanilla web component that adds a fallback url and logging function to an image.",
+  "version": "1.3.0",
+  "description": "A vanilla web component that adds a fallback url and logging function to an image.",
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "^1.0.0",
     "http-server": "^0.11.1",
@@ -13,7 +12,11 @@
     "start": "http-server",
     "test": "npx wct --npm"
   },
-  "keywords": ["web-component", "image", "web-component-tester"],
+  "keywords": [
+    "web-component",
+    "image",
+    "web-component-tester"
+  ],
   "author": "pearlbea@gmail.com, 4braham@gmail.com",
   "license": "MIT"
 }
