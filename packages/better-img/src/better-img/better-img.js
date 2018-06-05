@@ -11,6 +11,11 @@ class BetterImg extends HTMLElement {
     `;
     return template;
   }
+
+  static get observedAttributes() {
+    return ["url", "fallback", "width", "height", "alt", "log"];
+  }
+
   constructor() {
     super();
     this.attachShadowDOM();
@@ -23,13 +28,17 @@ class BetterImg extends HTMLElement {
     this.setProperties();
   }
 
+  attributeChangedCallback(name, oldVal, newVal) {
+    this.setProperties();
+  }
+
   attachShadowDOM() {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(BetterImg.template.content.cloneNode(true));
   }
 
   upgradeProperties() {
-    this.propKeys.forEach(prop => {
+    BetterImg.observedAttributes.forEach(prop => {
       if (this.hasOwnProperty(prop)) {
         let value = this[prop];
         delete this[prop];
@@ -42,11 +51,7 @@ class BetterImg extends HTMLElement {
     this.setSrc(this.url);
     this.img.width = this.width;
     this.img.height = this.height;
-    this.img.alt = this.altText;
-  }
-
-  get propKeys() {
-    return ["url", "fallback", "width", "height", "altText", "logCallback"];
+    this.img.alt = this.alt;
   }
 
   get img() {
@@ -57,24 +62,48 @@ class BetterImg extends HTMLElement {
     return this.getAttribute("url");
   }
 
+  set url(url) {
+    this.setAttribute("url", url);
+  }
+
   get width() {
     return this.getAttribute("width") || 480;
+  }
+
+  set width(width) {
+    this.setAttribute("width", width);
   }
 
   get height() {
     return this.getAttribute("height") || 640;
   }
 
-  get altText() {
+  set height(height) {
+    this.setAttribute("height", height);
+  }
+
+  get alt() {
     return this.getAttribute("alt") || "";
+  }
+
+  set alt(alt) {
+    this.setAttribute("alt", alt);
   }
 
   get fallback() {
     return this.getAttribute("fallback");
   }
 
+  set fallback(fallback) {
+    return this.setAttribute("fallback", fallback);
+  }
+
   get logCallback() {
     return this.getAttribute("log");
+  }
+
+  set logCallback(callback) {
+    this.setAttribute("log", callback);
   }
 
   onImgError(err) {
