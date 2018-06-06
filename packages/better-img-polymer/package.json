@@ -1,6 +1,7 @@
 {
   "name": "@pearlbea/better-img-polymer",
-  "description": "A simple element that adds a fallback url and logging function to an image.",
+  "description":
+    "A simple element that adds a fallback url and logging function to an image.",
   "main": "better-img-polymer.js",
   "unpkg": "dist/bundle.js",
   "dependencies": {
@@ -16,14 +17,11 @@
     "webpack-cli": "^3.0.2"
   },
   "version": "1.4.2",
-  "keywords": [
-    "web-component",
-    "image",
-    "web-component-tester"
-  ],
+  "keywords": ["web-component", "image", "web-component-tester"],
   "scripts": {
     "test": "polymer test",
-    "serve": "polymer serve"
+    "serve": "polymer serve",
+    "build": "webpack"
   },
   "author": "pearlbea@gmail.com",
   "license": "MIT"
