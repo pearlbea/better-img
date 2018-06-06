@@ -1,11 +1,33 @@
-# &lt;better-img-nutmeg&gt;
+# better-img-nutmeg
 
-## Install
+## Installation
+
+Install the [npm package](https://www.npmjs.com/package/@pearlbea/better-img-nutmeg) or add the script from [unkpg](https://unpkg.com/@pearlbea/better-img-nutmeg@1.2.8/dist/better-img-nutmeg.min.js) to your HTML page. If you want to use this component in [browsers](https://caniuse.com/#feat=custom-elementsv1) that do not support Custom Elements v1, use the [webcomponentsjs](https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-sd-ce.js) polyfill.
+
+Example:
+
+```html
+<!-- load the polyfill, if necessary -->
+<script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-sd-ce.js"></script>
+
+<!-- then load the element from unkpg -->
+<script src="https://unpkg.com/@pearlbea/better-img-nutmeg@1.2.8/dist/better-img-nutmeg.min.js"></script>
+
+<!-- or from node modules -->
+<script src="../node_modules/@pearlbea/better-img-nutmeg/dist/better-img-nutmeg.js"></script>
+
+<!-- use the component on your page -->
+<better-img-nutmeg
+  url="https://placeimg.com/480/640/animals"
+  fallback="https://lorempixel.com/480/640"
+  alt="an adorable animal">
+</better-img-nutmeg>
+```
 
 Polyfill tags if you need them. This will include ShadowDOM and Custom Elements support.
 
 ```html
-<script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-sd-ce.js"></script>
+
 ```
 
 Loading this component.
