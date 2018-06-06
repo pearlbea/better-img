@@ -15,10 +15,10 @@ Example:
 <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/webcomponents-bundle.js"></script>
 
 <!-- then load the element from unkpg -->
-<script src="https://unpkg.com/@pearlbea/better-img@1.3.0/src/better-img/better-img.js"></script>
+<script src="https://unpkg.com/@pearlbea/better-img@1.4.0/src/better-img/better-img.min.js"></script>
 
 <!-- or from node modules -->
-<script src="../node_modules/src/better-img/better-img.js"></script>
+<script src="../node_modules/src/better-img/better-img.min.js"></script>
 
 <!-- use the component on your page -->
 <better-img
