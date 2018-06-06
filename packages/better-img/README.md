@@ -30,8 +30,6 @@ Example:
 
 ## Usage
 
-Include
-
 | property       | type   | default | description                                                                                                                       |
 | -------------- | ------ | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | url (required) | string | null    | An image url. This will become the image's "src" attribute.                                                                       |
