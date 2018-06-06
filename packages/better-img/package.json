@@ -1,7 +1,8 @@
 {
   "name": "@pearlbea/better-img",
   "version": "1.4.5",
-  "description": "A vanilla web component that adds a fallback url and logging function to an image.",
+  "description":
+    "A vanilla web component that adds a fallback url and logging function to an image.",
   "main": "src/better-img.js",
   "unpkg": "src/better-img.js",
   "devDependencies": {
@@ -14,13 +15,10 @@
   "scripts": {
     "start": "http-server",
     "test": "npx wct --npm",
-    "minify": "npx uglifyjs src/better-img/better-img.js --output src/better-img/better-img.min.js"
+    "minify":
+      "npx uglifyjs src/better-img/better-img.js --output src/better-img/better-img.min.js"
   },
-  "keywords": [
-    "web-component",
-    "image",
-    "web-component-tester"
-  ],
+  "keywords": ["web-component", "image", "web-component-tester"],
   "author": "pearlbea@gmail.com, 4braham@gmail.com",
   "license": "MIT"
 }
