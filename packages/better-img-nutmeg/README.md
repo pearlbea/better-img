@@ -24,18 +24,6 @@ Example:
 </better-img-nutmeg>
 ```
 
-Polyfill tags if you need them. This will include ShadowDOM and Custom Elements support.
-
-```html
-
-```
-
-Loading this component.
-
-```html
-<script src="https://unpkg.com/better-img-nutmeg@latest/dist/better-img-nutmeg.min.js"></script>
-```
-
 ## Usage
 
 | property       | type   | default | description                                                                                                                       |

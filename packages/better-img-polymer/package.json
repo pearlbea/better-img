@@ -15,7 +15,7 @@
     "webpack": "^4.11.1",
     "webpack-cli": "^3.0.2"
   },
-  "version": "1.4.4",
+  "version": "1.4.5",
   "keywords": [
     "web-component",
     "image",
