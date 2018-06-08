@@ -1,7 +1,8 @@
 {
   "name": "@pearlbea/better-img",
   "version": "1.4.6",
-  "description": "A vanilla web component that adds a fallback url and logging function to an image.",
+  "description":
+    "A vanilla web component that adds a fallback url and logging function to an image.",
   "main": "src/better-img.js",
   "unpkg": "src/better-img.js",
   "devDependencies": {

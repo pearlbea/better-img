@@ -1,6 +1,7 @@
 {
   "name": "@pearlbea/better-img-polymer",
-  "description": "A simple element that adds a fallback url and logging function to an image.",
+  "description":
+    "A simple element that adds a fallback url and logging function to an image.",
   "main": "better-img-polymer.js",
   "unpkg": "dist/bundle.js",
   "dependencies": {

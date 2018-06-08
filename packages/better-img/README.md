@@ -53,6 +53,7 @@ Then to run the tests:
 npm test
 ```
 
+Tests use web-component-tester, which does not work on Node 10.
 See the [web-component-tester](https://github.com/Polymer/web-component-tester) docs for more info.
 
 ## Viewing your component
