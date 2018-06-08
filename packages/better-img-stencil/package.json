@@ -1,6 +1,6 @@
 {
   "name": "@pearlbea/better-img-stencil",
-  "version": "1.4.6",
+  "version": "1.5.0",
   "description": "A simple element that adds a fallback url and logging function to an image.",
   "module": "dist/esm/index.js",
   "main": "dist/better-img-stencil.js",
