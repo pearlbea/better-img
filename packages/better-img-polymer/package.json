@@ -16,13 +16,9 @@
     "webpack-cli": "^3.0.2"
   },
   "version": "1.4.6",
-  "keywords": [
-    "web-component",
-    "image",
-    "web-component-tester"
-  ],
+  "keywords": ["web-component", "image", "web-component-tester"],
   "scripts": {
-    "test": "polymer test",
+    "test": "# npx polymer test",
     "serve": "polymer serve",
     "build": "webpack"
   },
