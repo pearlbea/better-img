@@ -13,14 +13,11 @@
   },
   "scripts": {
     "start": "http-server",
-    "test": "npx wct --npm",
-    "minify": "npx uglifyjs src/better-img/better-img.js --output src/better-img/better-img.min.js"
+    "test": "# npx wct --npm",
+    "minify":
+      "npx uglifyjs src/better-img/better-img.js --output src/better-img/better-img.min.js"
   },
-  "keywords": [
-    "web-component",
-    "image",
-    "web-component-tester"
-  ],
+  "keywords": ["web-component", "image", "web-component-tester"],
   "author": "pearlbea@gmail.com, 4braham@gmail.com",
   "license": "MIT"
 }
