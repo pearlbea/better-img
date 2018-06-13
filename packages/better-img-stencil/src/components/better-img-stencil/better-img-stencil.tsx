@@ -15,10 +15,13 @@ export class BetterImgStencil {
   @Prop() width: number = 480;
 
   @State() usingFallback: boolean = false;
+  
+  image: HTMLImageElement;
 
   render() {
     return (
       <img
+        ref={(img: HTMLImageElement) => this.image = img}
         onError={this.handleImgError.bind(this)}
         width={this.width}
         height={this.height}
@@ -29,10 +32,6 @@ export class BetterImgStencil {
 
   componentDidLoad() {
     this.setSrc(this.url);
-  }
-
-  get image() {
-    return this.el.querySelector("img");
   }
 
   handleImgError(error) {
