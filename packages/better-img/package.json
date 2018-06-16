@@ -1,6 +1,6 @@
 {
   "name": "@pearlbea/better-img",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "A vanilla web component that adds a fallback url and logging function to an image.",
   "main": "src/better-img.js",
   "unpkg": "src/better-img.js",
@@ -15,7 +15,6 @@
     "karma-mocha": "^1.3.0",
     "mocha": "^5.2.0",
     "uglify-es": "^3.3.9"
-
   },
   "scripts": {
     "start": "http-server",
