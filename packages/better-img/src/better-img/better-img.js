@@ -19,10 +19,10 @@ class BetterImg extends HTMLElement {
   constructor() {
     super();
     this.attachShadowDOM();
-    this.addEventListener("error", this.onImgError);
   }
 
   connectedCallback() {
+    this.img.onerror = this.onImgError.bind(this);
     this.usingFallback = false;
     this.upgradeProperties();
     this.setProperties();
