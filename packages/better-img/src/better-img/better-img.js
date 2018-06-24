@@ -8,6 +8,7 @@ class BetterImg extends HTMLElement {
         }
       </style>
       <img />
+      <slot></slot>
     `;
     return template;
   }
@@ -113,7 +114,6 @@ class BetterImg extends HTMLElement {
 
   useFallback() {
     if (this.fallback && !this.usingFallback) {
-      this.setAttribute("url", this.fallback);
       this.setSrc(this.fallback);
       this.usingFallback = true;
     }
