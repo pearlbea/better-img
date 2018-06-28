@@ -108,8 +108,9 @@ class BetterImg extends HTMLElement {
   }
 
   onImgError(err) {
-    this.logError(err);
     this.useFallback();
+    this.logError(err);
+
   }
 
   useFallback() {
