@@ -1,6 +1,6 @@
 {
   "name": "@pearlbea/better-img-nutmeg",
-  "version": "1.4.6",
+  "version": "1.5.4",
   "description": "A simple web component that adds a fallback url and error logging function to an image",
   "main": "dist/better-img-nutmeg.js",
   "module": "dist/better-img-nutmeg.js",
