@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
     <title>Better Image</title>
-    <style>
-      body { text-align: center; font-family: sans-serif; }
-    </style>
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/"></script>
     <script src="/src/better-img/better-img.js"></script>
     <script>
@@ -14,42 +11,70 @@
         console.log('me');
       }
     </script>
+    <style>
+      .container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-family: Helvetica, arial, sans-serif;
+      }
+      .demo {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 1em;
+        width: 80%;
+      }
+      figcaption {
+        font-size: 1.3em;
+        padding: 1em;
+        width: 50%;
+      }
+    </style>
   </head>
   <body>
-
-    <h1>better-img demo</h1>
-
-    <better-img
-      url="https://placeimg.com/480/640/animals"
-      fallback="http://placehold.it/480x640"
-      alt="an adorable animal">
-      <h1>Here is caption text.</h1>
-    </better-img>
-
-    <figcaption><code>&lt;better-img
-        url="https://placeimg.com/480/640/animals"
-        fallback="http://placehold.it/480x640"
-        alt="an adorable animal"&gt;
-      &lt;/better-img&gt;
-    </code></figcaption>
-
-    <better-img
-      url="https://oopsie"
-      fallback="http://placehold.it/480x640"
-      alt="another description"
-      log="logMe">
-    </better-img>
-
-    <figcaption>
-      <code>
-        &lt;better-img
-          url="https://oopsie"
-          fallback="http://placehold.it/480x640"
-          alt="another description"
-          log="logMe"&gt;
-        &lt;/better-img&gt;
-      </code>
-    </figcaption>
-
+    <div class="container">
+    <h1>&lt;better-img&gt;</h1>
+    <div class="demo">
+      <better-img
+        url="https://placeimg.com/300/300/animals"
+        fallback="http://placehold.it/300x300"
+        alt="an adorable animal"
+        width="300"
+        height="300">
+        <div>Here is caption text.</div>
+      </better-img>
+      <figcaption>
+        <code>&lt;better-img<br>
+          &nbsp;&nbsp;url="https://placeimg.com/480/640/animals"<br>
+          &nbsp;&nbsp;fallback="http://placehold.it/480x640"<br>
+          &nbsp;&nbsp;alt="an adorable animal"<br>
+          &nbsp;&nbsp;width="300"<br>
+          &nbsp;&nbsp;height="300"&gt;<br>
+          &nbsp;&nbsp;&lt;div&gt;Here is caption text.&lt;/div&gt;<br>
+          &lt;/better-img&gt;
+        </code>
+      </figcaption>
+    </div>
+    <div class="demo">
+      <better-img
+        url="https://oopsie"
+        fallback="http://placehold.it/300x300"
+        alt="an adorable animal"
+        width="300"
+        height="300">
+      </better-img>
+      <figcaption>
+        <code>&lt;better-img<br>
+          &nbsp;&nbsp;url="https://oopsie"<br>
+          &nbsp;&nbsp;fallback="http://placehold.it/300x300"<br>
+          &nbsp;&nbsp;alt="an adorable animal"<br>
+          &nbsp;&nbsp;width="300"<br>
+          &nbsp;&nbsp;height="300"&gt;<br>
+          &lt;/better-img&gt;
+        </code>
+      </figcaption>
+    </div>
+  </div>
   </body>
 </html>
