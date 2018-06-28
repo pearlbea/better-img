@@ -7,8 +7,8 @@
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/"></script>
     <script src="/src/better-img/better-img.js"></script>
     <script>
-      function logMe() {
-        console.log('me');
+      function logMe(err) {
+        console.log('me ', err);
       }
     </script>
     <style>
@@ -60,6 +60,7 @@
       <better-img
         url="https://oopsie"
         fallback="http://placehold.it/300x300"
+        log="logMe"
         alt="an adorable animal"
         width="300"
         height="300">
@@ -68,6 +69,7 @@
         <code>&lt;better-img<br>
           &nbsp;&nbsp;url="https://oopsie"<br>
           &nbsp;&nbsp;fallback="http://placehold.it/300x300"<br>
+          &nbsp;&nbsp;log="logMe"<br>
           &nbsp;&nbsp;alt="an adorable animal"<br>
           &nbsp;&nbsp;width="300"<br>
           &nbsp;&nbsp;height="300"&gt;<br>
