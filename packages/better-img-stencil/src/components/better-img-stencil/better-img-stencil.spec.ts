@@ -58,7 +58,7 @@ describe("better-img-stencil", () => {
                   height="300"
                   alt='cute animals'
                   fallback='https://placeimg.com/500/500/nature'
-                  ></better-img-stencil>`
+                  ><div>caption</div></better-img-stencil>`
       });
     });
 
@@ -81,6 +81,9 @@ describe("better-img-stencil", () => {
 
     it("should use the supplied height", () => {
       expect(element.querySelector("img").getAttribute("height")).toBe("300");
+    });
+    it("should render slot content", () => {
+      expect(element.innerHTML).toContain("<div>caption</div>")
     });
   });
 

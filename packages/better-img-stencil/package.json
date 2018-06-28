@@ -3,7 +3,7 @@
   "version": "1.5.4",
   "description": "A simple element that adds a fallback url and logging function to an image.",
   "module": "dist/esm/index.js",
-  "main": "dist/better-img-stencil.js",
+  "main": "dist/index.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [

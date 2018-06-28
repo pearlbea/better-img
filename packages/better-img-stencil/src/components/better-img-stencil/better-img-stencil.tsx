@@ -2,7 +2,8 @@ import { Component, Element, Prop, State } from "@stencil/core";
 
 @Component({
   tag: "better-img-stencil",
-  styleUrl: "better-img-stencil.css"
+  styleUrl: "better-img-stencil.css",
+  shadow: true
 })
 export class BetterImgStencil {
   @Element() el: HTMLElement;
@@ -15,18 +16,20 @@ export class BetterImgStencil {
   @Prop() width: number = 480;
 
   @State() usingFallback: boolean = false;
-  
+
   image: HTMLImageElement;
 
   render() {
     return (
-      <img
-        ref={(img: HTMLImageElement) => this.image = img}
-        onError={this.handleImgError.bind(this)}
-        width={this.width}
-        height={this.height}
-        alt={this.alt}
-      />
+      <div>
+        <img
+          ref={(img: HTMLImageElement) => this.image = img}
+          onError={this.handleImgError.bind(this)}
+          width={this.width}
+          height={this.height}
+          alt={this.alt}
+        /><div><slot /></div>
+      </div>
     );
   }
 

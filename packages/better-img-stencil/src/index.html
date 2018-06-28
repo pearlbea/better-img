@@ -5,15 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
   <script src="/build/better-img-stencil.js"></script>
-
+  <script>
+    function logMe(err) {
+      console.log('me ', err);
+    }
+  </script>
+  <style>
+    .container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      font-family: Helvetica, arial, sans-serif;
+    }
+    .demo {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 1em;
+      width: 80%;
+    }
+    figcaption {
+      font-size: 1.3em;
+      padding: 1em;
+      width: 50%;
+    }
+  </style>
 </head>
 <body>
-
-  <better-img-stencil
-    url="https://placimg.com/480/640/animals"
-    fallback="https://placeimg.com/480/640/nature"
-    >
-  </better-img-stencil>
+  <div class="container">
+    <h1>&lt;better-img-stencil&gt;</h1>
+    <div class="demo">
+      <better-img-stencil
+        url="https://placeimg.com/300/300/animals"
+        fallback="http://placehold.it/300x300"
+        log="logMe"
+        width="300"
+        height="300"
+        >
+        <div>a caption</div>
+      </better-img-stencil>
+      <figcaption>
+        <code>
+          &lt;better-img-stencil<br>
+          &nbsp;&nbsp;url="https://placeimg.com/300/300/animals"<br>
+          &nbsp;&nbsp;fallback="http://placehold.it/300x300"<br>
+          &nbsp;&nbsp;log="logMe"<br>
+          &nbsp;&nbsp;width="300"<br>
+          &nbsp;&nbsp;height="300"<br>
+          &gt;<br>
+          &nbsp;&nbsp;&lt;div&gt;a caption&lt;div&gt;<br>
+          &lt;/better-img-stencil&gt;
+        </code>
+      </figcaption>
+    </div>
+    <div class="demo">
+      <better-img-stencil
+        url="https://oopsie"
+        fallback="http://placehold.it/300x300"
+        log="logMe"
+        width="300"
+        height="300"
+        >
+      </better-img-stencil>
+      <figcaption>
+        <code>
+          &lt;better-img-stencil<br>
+          &nbsp;&nbsp;url="https://placeimg.com/300/300/animals"<br>
+          &nbsp;&nbsp;fallback="http://placehold.it/300x300"<br>
+          &nbsp;&nbsp;log="logMe"<br>
+          &nbsp;&nbsp;width="300"<br>
+          &nbsp;&nbsp;height="300"<br>
+          &gt;
+          &lt;/better-img-stencil&gt;
+        </code>
+      </figcaption>
+    </div>
+  </div>
 
 </body>
 </html>
