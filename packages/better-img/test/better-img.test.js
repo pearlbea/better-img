@@ -35,7 +35,7 @@ describe("<better-img>", () => {
         fallback="https://placeimg.com/300/300/nature"
         width="300"
         height="300"
-        ></better-img>`);
+        ><div>caption</caption></better-img>`);
       img = component.shadowRoot.querySelector("img");
     });
 
@@ -53,6 +53,9 @@ describe("<better-img>", () => {
 
     it("uses the supplied height", () => {
       expect(img.getAttribute("height")).to.equal(String(component.height));
+    });
+    it("displays slot content", () => {
+      expect(component.innerHTML).to.equal("<div>caption</div>");
     });
   });
 
