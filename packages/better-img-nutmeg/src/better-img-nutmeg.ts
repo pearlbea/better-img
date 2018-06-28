@@ -16,8 +16,8 @@ export class BetterImgNutmeg extends Seed {
   /** The component instance has been inserted into the DOM. */
   public connectedCallback() {
     super.connectedCallback();
-    this.addEventListener("error", this.handleImageError.bind(this));
-    this.setSrc();
+    this.image.addEventListener("error", this.handleImageError.bind(this));
+    this.setSrc(this.url);
   }
 
   /** The component instance has been removed from the DOM. */
@@ -56,14 +56,17 @@ export class BetterImgNutmeg extends Seed {
     `;
   }
 
-  private handleImageError() {}
+  private handleImageError(err) {
+    this.setSrc(this.fallback);
+    window[this.log](err);
+  }
 
   get image() {
     return this.$("img");
   }
 
-  private setSrc() {
-    this.image.setAttribute("src", this.url);
+  private setSrc(url) {
+    this.image.setAttribute("src", url);
   }
 }
 

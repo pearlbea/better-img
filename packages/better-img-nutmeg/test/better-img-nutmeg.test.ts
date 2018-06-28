@@ -67,9 +67,10 @@ describe("<better-img-nutmeg>", () => {
   describe("with error", () => {
     beforeEach(() => {
       component = fixture(`<better-img-nutmeg
-        url="https://placeg.com/300/300/animals"
+        url="https://oopsie"
         alt="cute animal"
         fallback="https://placeimg.com/300/300/nature"
+        logMe="logMe"
         width="300"
         height="300"
         ></better-img-nutmeg>`);
@@ -77,17 +78,14 @@ describe("<better-img-nutmeg>", () => {
 
     it("is renders fallback image", () => {
       setTimeout(() => {
-        expect(component.$("img").getAttribute("src")).to.equal(
-          component.fallback
-        );
-      }, 200);
+        expect(component.$("img").getAttribute("src")).to.equal(component.fallback);
+      }, 100);
     });
 
     it("is calls the log function", () => {
       setTimeout(() => {
-        expect(document.querySelector("test")).to.be.ok;
-        expect(document.querySelector("test")).to.equal("me");
-      }, 200);
+        expect(document.querySelector("test").textContent).to.equal("me");
+      }, 100);
     });
   });
 });
