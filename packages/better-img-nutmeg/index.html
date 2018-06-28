@@ -5,22 +5,82 @@
   <title>better-img-nutmeg demos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="https://nutmeg.tools/favicon.png">
-
   <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-sd-ce.js"></script>
-
-  <!-- Use `npm run serve` to start a development server. -->
+  <script>
+    function logMe(err) {
+      console.log('me ', err);
+    }
+  </script>
+  <style>
+    .container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      font-family: Helvetica, arial, sans-serif;
+    }
+    .demo {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 1em;
+      width: 80%;
+    }
+    figcaption {
+      font-size: 1.3em;
+      padding: 1em;
+      width: 50%;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>&lt;better-img-nutmeg&gt;</h1>
+    <div class="demo">
+      <better-img-nutmeg
+        url="https://placeimg.com/300/300/animals"
+        alt="cute animal"
+        fallback="http://placehold.it/300x300"
+        log="logMe"
+        width="300"
+        height="300">
+      </better-img-nutmeg>
+      <figcaption>
+        <code>
+          &lt;better-img-nutmeg<br>
+            &nbsp;&nbsp;url="https://placeimg.com/300/300/animals"<br>
+            &nbsp;&nbsp;alt="cute animal"<br>
+            &nbsp;&nbsp;fallback="http://placehold.it/300x300"<br>
+            &nbsp;&nbsp;log="logMe"<br>
+            &nbsp;&nbsp;width="300"</br>
+            &nbsp;&nbsp;height="300"&gt;<br>
+          &lt;/better-img-nutmeg&gt;
+        </code>
+      </figcaption>
+    </div>
 
-  <better-img-nutmeg
-    url="https://placeimg.com/300/300/animals"
-    alt="cute animal"
-    fallback="https://placeimg.com/300/300/nature"
-    width="300"
-    height="300">
-  </better-img-nutmeg>
-
-
+<div class="demo">
+    <better-img-nutmeg
+      url="https://oopsie"
+      alt="cute animal"
+      fallback="http://placehold.it/300x300"
+      log="logMe"
+      width="300"
+      height="300">
+    </better-img-nutmeg>
+    <figcaption>
+      <code>
+        &lt;better-img-nutmeg<br>
+          &nbsp;&nbsp;url="https://oopsie"<br>
+          &nbsp;&nbsp;alt="cute animal"<br>
+          &nbsp;&nbsp;fallback=http://placehold.it/300x300"<br>
+          &nbsp;&nbsp;log="logMe"<br>
+          &nbsp;&nbsp;width="300"<br>
+          &nbsp;&nbsp;height="300"&gt;<br>
+        &lt;/better-img-nutmeg&gt;
+      </code>
+    </figcaption>
+  </demo>
+  </div>
   <!-- In development `better-img-nutmeg.bundled.js` will automatically be loaded. -->
 </body>
 </html>
