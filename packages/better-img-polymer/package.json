@@ -9,7 +9,7 @@
   "devDependencies": {
     "@polymer/iron-demo-helpers": "3.0.0-pre.21",
     "@webcomponents/webcomponentsjs": "2.0.2",
-    "polymer-cli": "1.7.4",
+    "polymer-cli": "^1.7.4",
     "wct-browser-legacy": "1.0.1",
     "web-component-tester": "6.7.0",
     "webpack": "4.12.0",
@@ -22,8 +22,8 @@
     "web-component-tester"
   ],
   "scripts": {
-    "test": "# npx polymer test",
-    "serve": "polymer serve",
+    "test": "npx polymer test",
+    "serve": "npx polymer serve",
     "build": "webpack"
   },
   "author": "pearlbea@gmail.com",

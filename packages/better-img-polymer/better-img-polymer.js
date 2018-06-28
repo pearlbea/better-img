@@ -16,13 +16,12 @@ class BetterImgPolymer extends PolymerElement {
           display: block;
           text-align: center;
         }
-
       </style>
       <img
         width$=[[width]]
         height$=[[height]]
         alt$="[[alt]]"
-      />
+      /><slot></slot>
     `;
   }
   static get properties() {

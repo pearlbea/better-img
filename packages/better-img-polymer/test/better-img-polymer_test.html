@@ -20,7 +20,7 @@
 
     <test-fixture id="BasicTestFixture">
       <template>
-        <better-img-polymer url="https://placeimg.com/481/641/animals"></better-img-polymer>
+        <better-img-polymer url="https://placeimg.com/481/641/animals"><h1>A caption</h1></better-img-polymer>
       </template>
     </test-fixture>
 
@@ -73,6 +73,10 @@ suite("better-img-polymer", () => {
 
     test("it sets the default alt", () => {
       assert.equal(image.getAttribute("alt"), "");
+    });
+
+    test("it displays slot content", () => {
+      assert.equal(element.innerHTML, "<h1>A caption</h1>")
     });
   });
 
