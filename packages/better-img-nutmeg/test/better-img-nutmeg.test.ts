@@ -88,6 +88,21 @@ describe("<better-img-nutmeg>", () => {
       }, 100);
     });
   });
+
+  describe("with slot", () => {
+    beforeEach(() => {
+      component = fixture(`<better-img-nutmeg
+        url="https://placeimg.com/300/300/nature"
+        alt="nature"
+        fallback="https://placeimg.com/300/300/nature"
+        width="300"
+        height="300"
+        ><h1>Some html in the slot</h1></better-img-nutmeg>`);
+    });
+    it("displays slot content", () => {
+        expect(component.innerHTML).to.equal("<h1>Some html in the slot</h1>");
+    });
+  });
 });
 
 function fixture(tag: string): BetterImgNutmeg {

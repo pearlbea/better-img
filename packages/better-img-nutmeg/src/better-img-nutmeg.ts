@@ -53,10 +53,11 @@ export class BetterImgNutmeg extends Seed {
         width=${this.width}
         height=${this.height}
         />
+        <slot></slot>
     `;
   }
 
-  private handleImageError(err) {
+  private handleImageError(err: Event) {
     this.setSrc(this.fallback);
     window[this.log](err);
   }
@@ -65,7 +66,7 @@ export class BetterImgNutmeg extends Seed {
     return this.$("img");
   }
 
-  private setSrc(url) {
+  private setSrc(url: string) {
     this.image.setAttribute("src", url);
   }
 }
