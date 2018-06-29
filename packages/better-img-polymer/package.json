@@ -24,7 +24,8 @@
   "scripts": {
     "test": "npx polymer test",
     "serve": "npx polymer serve",
-    "build": "webpack"
+    "build": "webpack",
+    "prepare": "npm run build"
   },
   "author": "pearlbea@gmail.com",
   "license": "MIT"
