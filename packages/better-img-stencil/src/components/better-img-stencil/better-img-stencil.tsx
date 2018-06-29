@@ -1,4 +1,4 @@
-import { Component, Element, Prop, State } from "@stencil/core";
+import { Component, Prop, State } from "@stencil/core";
 
 @Component({
   tag: "better-img-stencil",
@@ -6,8 +6,6 @@ import { Component, Element, Prop, State } from "@stencil/core";
   shadow: true
 })
 export class BetterImgStencil {
-  @Element() el: HTMLElement;
-
   @Prop() alt: string;
   @Prop() fallback: string;
   @Prop() height: number = 640;
