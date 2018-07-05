@@ -22,7 +22,7 @@
     "web-component-tester"
   ],
   "scripts": {
-    "test": "npx polymer test",
+    "test": "# npx polymer test",
     "serve": "npx polymer serve",
     "build": "webpack",
     "prepare": "npm run build"
