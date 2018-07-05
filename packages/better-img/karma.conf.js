@@ -3,12 +3,9 @@ module.exports = function(config) {
     frameworks: ["mocha", "chai"],
     browsers: ["ChromeHeadless", "FirefoxHeadless"],
     files: [
-      {
-        pattern:
-          "node_modules/@webcomponents/webcomponentsjs/webcomponents-sd-ce.js"
-      },
-      { pattern: "src/better-img/better-img.js" },
-      { pattern: "test/better-img.test.js" }
+      "node_modules/@webcomponents/webcomponentsjs/webcomponents-sd-ce.js",
+      "src/better-img/better-img.js",
+      "test/better-img.test.js"
     ],
     client: {
       mocha: {
