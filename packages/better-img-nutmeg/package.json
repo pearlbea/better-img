@@ -27,7 +27,7 @@
     "watch": "npx nutmeg watch ."
   },
   "dependencies": {
-    "@nutmeg/seed": "0.12.2"
+    "@nutmeg/seed": "0.13.0"
   },
   "devDependencies": {
     "@nutmeg/cli": "0.15.0"
