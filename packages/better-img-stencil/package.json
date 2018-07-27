@@ -22,7 +22,7 @@
     "@stencil/core": "0.10.9",
     "@stencil/dev-server": "latest",
     "@stencil/utils": "latest",
-    "jest": "23.4.1",
+    "jest": "23.4.2",
     "@types/jest": "23.3.0"
   },
   "jest": {
