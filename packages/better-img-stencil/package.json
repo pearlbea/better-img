@@ -23,7 +23,7 @@
     "@stencil/dev-server": "latest",
     "@stencil/utils": "latest",
     "jest": "23.4.1",
-    "@types/jest": "23.3.0"
+    "@types/jest": "23.3.1"
   },
   "jest": {
     "transform": {
