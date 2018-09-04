@@ -9,6 +9,8 @@ This repository contains four different versions of the component:
 * [better-img-polymer](/packages/better-img-polymer) - same thing made with Polymer
 * [better-img-stencil](/packages/better-img-stencil) - again with Stencil
 
+Read more about it [here](https://bendyworks.com/blog/tale-of-four-components).
+
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
