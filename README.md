@@ -9,7 +9,7 @@ This repository contains four different versions of the component:
 * [better-img-polymer](/packages/better-img-polymer) - same thing made with Polymer
 * [better-img-stencil](/packages/better-img-stencil) - again with Stencil
 
-Read more about it [here](https://bendyworks.com/blog/tale-of-four-components).
+See a demo [here](https://component-demo.firebaseapp.com/). Read more about these components [here](https://bendyworks.com/blog/tale-of-four-components).
 
 ## License
 
