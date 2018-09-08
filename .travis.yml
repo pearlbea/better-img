@@ -6,7 +6,6 @@ before_script:
   - node --version
   - npm --version
   - npm install
-  - npx lerna exec -- npm install
 script:
   - npm test
 os:
