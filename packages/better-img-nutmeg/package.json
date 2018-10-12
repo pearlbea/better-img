@@ -30,6 +30,6 @@
     "@nutmeg/seed": "0.13.0"
   },
   "devDependencies": {
-    "@nutmeg/cli": "0.15.0"
+    "@nutmeg/cli": "0.16.1"
   }
 }
