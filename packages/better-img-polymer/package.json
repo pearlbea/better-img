@@ -9,7 +9,7 @@
   "devDependencies": {
     "@polymer/iron-demo-helpers": "3.0.2",
     "@webcomponents/webcomponentsjs": "2.1.3",
-    "polymer-cli": "1.8.0",
+    "polymer-cli": "1.8.1",
     "wct-browser-legacy": "1.0.2",
     "web-component-tester": "6.8.0",
     "webpack": "4.20.2",
