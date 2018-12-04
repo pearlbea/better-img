@@ -12,7 +12,7 @@
     "polymer-cli": "1.9.1",
     "wct-browser-legacy": "1.0.2",
     "web-component-tester": "6.9.0",
-    "webpack": "4.26.1",
+    "webpack": "4.27.0",
     "webpack-cli": "3.1.2"
   },
   "version": "1.7.9",
