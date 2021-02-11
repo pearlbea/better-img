@@ -13,7 +13,7 @@
     "wct-browser-legacy": "1.0.2",
     "web-component-tester": "6.9.2",
     "webpack": "5.21.2",
-    "webpack-cli": "3.3.11"
+    "webpack-cli": "4.5.0"
   },
   "version": "1.7.9",
   "keywords": [
