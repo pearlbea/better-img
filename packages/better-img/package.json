@@ -6,7 +6,7 @@
   "unpkg": "src/better-img.js",
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "2.5.0",
-    "chai": "4.3.3",
+    "chai": "4.3.4",
     "http-server": "0.12.3",
     "karma": "6.2.0",
     "karma-chai": "0.1.0",
