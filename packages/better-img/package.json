@@ -7,7 +7,7 @@
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "2.6.0",
     "chai": "4.3.4",
-    "http-server": "13.0.2",
+    "http-server": "14.0.0",
     "karma": "6.3.4",
     "karma-chai": "0.1.0",
     "karma-chrome-launcher": "3.1.0",
