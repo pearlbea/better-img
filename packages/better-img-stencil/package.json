@@ -19,7 +19,7 @@
     "prepare": "npm run build"
   },
   "devDependencies": {
-    "@stencil/core": "2.22.3",
+    "@stencil/core": "3.2.0",
     "@stencil/dev-server": "latest",
     "@stencil/utils": "latest",
     "@types/jest": "28.1.8",
